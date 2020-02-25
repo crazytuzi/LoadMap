@@ -33,12 +33,12 @@ void ULoadMapGameInstance::BeginLoadingScreen(const FString& MapName)
 {
 	DateTime = FDateTime::Now();
 
-	UE_LOG(LogTemp, Log, TEXT("BeginLoadingScreen => %s"), *this->MapName.ToString());
+	UE_LOG(LogTemp, Log, TEXT("BeginLoadingScreen => %s"), *MapName);
 }
 
 void ULoadMapGameInstance::EndLoadingScreen(UWorld* LoadedWorld) const
 {
-	UE_LOG(LogTemp, Log, TEXT("EndLoadingScreen => %s,use time in %fs"), *this->MapName.ToString(),
+	UE_LOG(LogTemp, Log, TEXT("EndLoadingScreen => %s,use time in %fs"), *LoadedWorld->GetMapName(),
 	       (FDateTime::Now()-DateTime).GetTotalSeconds());
 }
 
