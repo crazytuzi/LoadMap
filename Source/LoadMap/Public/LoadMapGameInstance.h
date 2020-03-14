@@ -42,4 +42,6 @@ private:
 	FLoadPackageAsyncDelegate AsyncDelegate;
 
 	const FName MapName = "/Game/Maps/FirstPersonExampleMap";
+
+	bool bIsFirstLevel;
 };

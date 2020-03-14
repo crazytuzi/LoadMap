@@ -6,8 +6,18 @@ public class LoadMap : ModuleRules
 {
 	public LoadMap(ReadOnlyTargetRules Target) : base(Target)
 	{
+		bLegacyPublicIncludePaths = true;
+
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "HeadMountedDisplay" });
+		PublicDependencyModuleNames.AddRange(new string[] { 
+			"Core", 
+			"CoreUObject", 
+			"Engine", 
+			"InputCore", 
+			"HeadMountedDisplay",
+			"MoviePlayer",
+			"UMG"
+		});
 	}
 }
