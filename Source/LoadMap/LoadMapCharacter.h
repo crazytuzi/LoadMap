@@ -138,5 +138,10 @@ public:
 	/** Returns FirstPersonCameraComponent subobject **/
 	FORCEINLINE class UCameraComponent* GetFirstPersonCameraComponent() const { return FirstPersonCameraComponent; }
 
+	UFUNCTION(BlueprintCallable, Category = "Level")
+	void CharacterClientTravel(const FString& URL, enum ETravelType TravelType, bool bSeamless = false) const;
+
+	UFUNCTION(Server, WithValidation, Reliable, BlueprintCallable)
+	void Server_ReqServerTravel(const FString& URL);
 };
 

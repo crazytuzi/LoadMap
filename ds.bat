@@ -1,0 +1,1 @@
+start D:\software\UE_4.24\Engine\Binaries\Win64\UE4Editor-Win64-DebugGame.exe D:\file\UnrealProjects\LoadMap\LoadMap.uproject /Game/Maps/DefaultMap -server -game -log -port=9999

@@ -298,3 +298,26 @@ bool ALoadMapCharacter::EnableTouchscreenMovement(class UInputComponent* PlayerI
 	
 	return false;
 }
+
+void ALoadMapCharacter::CharacterClientTravel(const FString& URL, ETravelType TravelType, bool bSeamless) const
+{
+	if (Controller != nullptr)
+	{
+		auto PlayerController = Cast<APlayerController>(Controller);
+
+		if (PlayerController != nullptr)
+		{
+			PlayerController->ClientTravel(URL, TravelType, bSeamless);
+		}
+	}
+}
+
+void ALoadMapCharacter::Server_ReqServerTravel_Implementation(const FString& URL)
+{
+	GetWorld()->ServerTravel(URL);
+}
+
+bool ALoadMapCharacter::Server_ReqServerTravel_Validate(const FString& URL)
+{
+	return true;
+}
